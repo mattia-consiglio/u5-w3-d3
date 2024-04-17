@@ -1,9 +1,11 @@
 package matticonsiglio.u5w3d3.composite;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(1)
 public class CompositeRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
@@ -23,7 +25,6 @@ public class CompositeRunner implements CommandLineRunner {
         book.addPage(chapter3);
 
         System.out.println("Total pages: " + book.getPageCount());
-
 
         book.print();
     }
