@@ -4,5 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class Tenente extends Ufficiale {
-    public final int stipendio = 1000;
+    Tenente() {
+        this.setStipendio(1000);
+    }
 }

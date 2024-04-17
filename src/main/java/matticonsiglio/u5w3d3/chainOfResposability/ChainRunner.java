@@ -9,15 +9,15 @@ import org.springframework.stereotype.Component;
 public class ChainRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        TenenteFilter tenenteFilter = new TenenteFilter();
-        CapitanoFilter capitanoFilter = new CapitanoFilter();
-        MaggioreFilter maggioreFilter = new MaggioreFilter();
-        ColonnelloFilter colonnelloFilter = new ColonnelloFilter();
-        GeneraleFilter generaleFilter = new GeneraleFilter();
-        tenenteFilter.setSuccessor(capitanoFilter);
-        capitanoFilter.setSuccessor(maggioreFilter);
-        maggioreFilter.setSuccessor(colonnelloFilter);
-        colonnelloFilter.setSuccessor(generaleFilter);
-        tenenteFilter.check(2000);
+        Ufficiale tenente = new Tenente();
+        Capitano capitano = new Capitano();
+        Maggiore maggiore = new Maggiore();
+        Colonnello colonnello = new Colonnello();
+        Generale generale = new Generale();
+        tenente.setSuperiore(capitano);
+        capitano.setSuperiore(maggiore);
+        maggiore.setSuperiore(colonnello);
+        colonnello.setSuperiore(generale);
+        tenente.doCheck(1000);
     }
 }

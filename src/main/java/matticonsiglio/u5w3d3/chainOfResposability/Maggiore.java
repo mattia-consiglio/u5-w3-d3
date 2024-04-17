@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class Maggiore extends Ufficiale {
-    private final int stipendio = 3000;
-
+    Maggiore() {
+        this.setStipendio(3000);
+    }
 }
